@@ -3,6 +3,7 @@ version: '3'
 services:
   polynote:
     container_name: polynote
+    image: avmi/docker-polynote
     environment:
       POLYNOTE_CONFIG: |
         listen:
