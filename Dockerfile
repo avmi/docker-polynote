@@ -33,14 +33,14 @@ WORKDIR /usr/src/app
 ENV SPARK_VERSION=2.4.4
 ENV HADOOP_VERSION=2.7
 ENV SCALA_VERSION=2.11.12
-ENV POLYNOTE_VERSION=0.2.11
+ENV POLYNOTE_VERSION=0.2.14
 
 # Installing JDK 8
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-RUN apt-get update && apt-get install -y openjdk-8-jdk
+RUN apt-get update && apt-get install -y openjdk-8-jdk python3-dev
 
 # Installing Python w/dependencies
-RUN pip install jep
+RUN pip3 install jep
 RUN conda install -y tensorflow pyspark virtualenv keras plotly
 RUN conda install -y -c conda-forge jedi
 RUN conda clean -y --all
