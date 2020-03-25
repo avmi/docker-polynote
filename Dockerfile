@@ -13,7 +13,7 @@ RUN apt-get update --fix-missing && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.7.12-Linux-x86_64.sh -O ~/miniconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh && \
     /opt/conda/bin/conda install -y python=$PYTHON_VERSION && \
@@ -33,7 +33,7 @@ WORKDIR /usr/src/app
 ENV SPARK_VERSION=2.4.4
 ENV HADOOP_VERSION=2.7
 ENV SCALA_VERSION=2.11.12
-ENV POLYNOTE_VERSION=0.2.14
+ENV POLYNOTE_VERSION=0.3.3
 
 # Installing JDK 8
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
